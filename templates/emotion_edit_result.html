@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Emotion Edit Result</title>
+    <style>
+      body {
+        text-align: center;
+      }
+      h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+      }
+      .image-container {
+        margin: 0 20px;
+      }
+      .image-container img {
+        width: 400px;
+      }
+    </style>
+  </head>
+  <body style="background-color:powderblue;">
+    <h1>Emotion Edit Result</h1>
+    <div class="container">
+      <div class="image-container">
+        <h2>Original Image</h2>
+        <img src="{{ orig_img_url }}" alt="Original Image">
+      </div>
+      <div class="image-container">
+        <h2>{{value}}</h2>
+        <img src="{{ edited_img_url }}" alt="Edited Image">
+      </div>
+    </div>
+  </body>
+</html>

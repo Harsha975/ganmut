@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href='/staticFiles/main.css' />
+  </head>
+  <body style="background-color:powderblue;">
+    <center>
+
+        <h1>Facial emotion generator</h1>
+        <p style="color:blue;">Choose image file to upload</p>
+        
+          <form action="/upload" method="post" enctype="multipart/form-data">           
+            
+            <input type="file" name="photo">
+
+            <select name="emotions">
+              <option value="0">Neutral</option>
+              <option value="1">Happy</option>
+              <option value="2">Sad</option>
+              <option value="3">Surprise</option>
+              <option value="4">Fear</option>
+              <option value="5">Disgust</option>
+              <option value="6">Anger</option>
+            </select>
+
+            <input type="submit" value="Generate">
+          </form>
+    <br>
+ 
+    </center>
+  </body>
+</html>
+
+

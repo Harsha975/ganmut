@@ -1,0 +1,8 @@
+CMake
+dlib
+matplotlib
+numpy
+tqdm
+opencv-python
+tensorflow
+
