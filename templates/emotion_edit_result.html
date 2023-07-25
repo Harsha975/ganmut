@@ -4,36 +4,66 @@
     <title>Emotion Edit Result</title>
     <style>
       body {
-        text-align: center;
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background: #000;
+        color: #fff;
       }
-      h1 {
-        font-size: 36px;
-        margin-bottom: 20px;
+      .body {
+        display: flex;
       }
       .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 20px;
+        margin: auto;
+      }
+      .container h1 {
+        text-align: center;
+        border: 2px solid rgb(255, 255, 255);
+        margin: 80px 400px;
+        padding: 20px 0px;
+        background: #403d3d;
+        border-radius: 26px;
       }
       .image-container {
-        margin: 0 20px;
+        display: flex;
+        justify-content: space-evenly;
       }
-      .image-container img {
-        width: 400px;
-      }
+      
     </style>
   </head>
-  <body style="background-color:powderblue;">
-    <h1>Emotion Edit Result</h1>
+  <body>
+    <div class="body">
+      <img src="..\static\logo.png" alt="" width="85" />
+      <h1><b>Vidiosyncracy</b></h1>
+    </div>
     <div class="container">
+      <h1>Emotion Edit Result</h1>
       <div class="image-container">
-        <h2>Original Image</h2>
-        <img src="{{ orig_img_url }}" alt="Original Image">
-      </div>
-      <div class="image-container">
-        <h2>{{value}}</h2>
-        <img src="{{ edited_img_url }}" alt="Edited Image">
+        <div class="box1">
+          <h2>Original Image</h2>
+          <img src="{{orig_img_url}}" alt="NO" width="300" />
+        </div>
+        <div class="box2">
+          {% set emotion = value %}
+          {% if value =='0' %}
+              {% set emotion = 'Neutral' %}
+          {% elif value == '1' %}
+              {% set emotion = 'Happy' %}
+          {% elif value == '2' %}
+              {% set emotion = 'Sad' %}
+          {% elif value == '3' %}
+              {% set emotion = 'Surprise' %}
+          {% elif value == '4' %}
+              {% set emotion = 'Fear' %}
+          {% elif value == '5' %}
+              {% set emotion = 'Disgust' %}
+          {% elif value == '6' %}
+              {% set emotion = 'Anger' %}
+          {% endif %}
+          
+          <h2>{{ emotion }}</h2>
+
+          <img src="{{ edited_img_url }}" alt="" width="300" />
+        </div>
       </div>
     </div>
   </body>
