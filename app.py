@@ -39,7 +39,7 @@ def emotion_edit(img_path, emotion, output_image_name):
     orig_img_url = os.path.join('static','image', output_image_name)
     edited_img_url = os.path.join('static', 'edited_images', output_image_name)
   
-    return render_template('emotion_edit_result.html', orig_img_url=orig_img_url, edited_img_url=edited_img_url , value = emotion)
+    return render_template('emotion_edit_result.html', orig_img_url=img_path, edited_img_url=edited_img_url , value = emotion)
 
 def get_emotion_coordinates(emotion):
     emotion_coordinates = {
