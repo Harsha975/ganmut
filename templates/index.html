@@ -1,34 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href='/staticFiles/main.css' />
+<html>
+  <head>
+    <title>Video and Image Upload</title>
+    <style>
+      body {
+        font-family: Montessa, sans-serif;
+        margin: 20px;
+        background: #000;
+        color: #fff;
+      }
+      .body {
+        display: flex;
+      }
+      .container {
+        margin: auto;
+        margin-top: 10vh;
+      }
+      .container h1 {
+        text-align: center;
+        border: 2px solid rgb(255, 255, 255);
+        margin: 80px 400px;
+        padding: 20px 0px;
+        background: #403d3d;
+        border-radius: 26px;
+      }
+
+      .container form {
+        font-size: 26px;
+        width: 800px;
+        margin: 0 auto;
+      }
+        .box{
+            display: flex;
+            justify-content: space-evenly;
+            margin: 50px;
+        }
+        input[type="file"]{
+          text-align: center;
+          padding: 5px;
+        }
+      input[type="submit"] {
+        position: absolute;
+        margin: 20px;
+        right: 50vw;
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+        border-radius: 20px;
+        align-items: center;
+        display: flex;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+      .container form select{
+        background: #000;
+        padding: 5px 20px;
+        color: white;
+        width: 150px;
+        height: 40px;
+        border-radius: 30px;
+        font-size:16px ;
+      }
+    </style>
   </head>
-  <body style="background-color:powderblue;">
-    <center>
 
-        <h1>Facial emotion generator</h1>
-        <p style="color:blue;">Choose image file to upload</p>
-        
-          <form action="/upload" method="post" enctype="multipart/form-data">           
-            
-            <input type="file" name="photo">
+  <body>
+    <div class="body">
+      <img src="..\static\logo.png" alt="" width="85" />
+      <h1><b>Vidiosyncracy</b></h1>
+    </div>
+    <div class="container">
+      <h1>Choose image file to upload</h1>
+      <form action="/upload" method="POST" enctype="multipart/form-data">
+        <div class="box">
+          <label for="video"><b>Select image </b></label>
+          <input type="file" name="photo" id="video" /><br /><br />
 
-            <select name="emotions">
-              <option value="0">Neutral</option>
-              <option value="1">Happy</option>
-              <option value="2">Sad</option>
-              <option value="3">Surprise</option>
-              <option value="4">Fear</option>
-              <option value="5">Disgust</option>
-              <option value="6">Anger</option>
-            </select>
-
-            <input type="submit" value="Generate">
-          </form>
-    <br>
- 
-    </center>
+          <select name="emotions">
+            <option value="0">Neutral</option>
+            <option value="1">Happy</option>
+            <option value="2">Sad</option>
+            <option value="3">Surprise</option>
+            <option value="4">Fear</option>
+            <option value="5">Disgust</option>
+            <option value="6">Anger</option>
+          </select>
+        </div>
+        <input type="submit" value="Generate" />
+      </form>
+    </div>
   </body>
 </html>
-
-
